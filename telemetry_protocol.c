@@ -4,8 +4,7 @@
 
 void Telemetry_SendPacket(LoRa_HandleTypeDef* lora, TelemetryPacket_t* packet)
 {
-    // Bu fonksiyon, alt katmandaki LoRa sürücüsünü çağırarak
-    // telemetri paketinin byte'a çevrilip gönderilmesini sağlar.
+    // Bu fonksiyon, alt katmandaki LoRa sürücüsünü çağırarak telemetri paketinin byte'a çevrilip gönderilmesini sağlar.
     LoRa_SendMessage(lora, (uint8_t*)packet, sizeof(TelemetryPacket_t));
 }
 

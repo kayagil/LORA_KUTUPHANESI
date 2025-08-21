@@ -6,7 +6,7 @@
 #include "lora_config.h" // Proje ayarlarını dahil et
 #include <stdint.h>
 
-// Bu enum değerleri, datasheet'teki register bitleriyle eşleşir
+// burdaki değerleri datasheetten kontrol et
 typedef enum {
     LORA_BANDWIDTH_7_8_KHZ   = 0x00,
     LORA_BANDWIDTH_10_4_KHZ  = 0x10,
@@ -41,7 +41,7 @@ typedef struct {
     int8_t                power;
 } LoRa_HandleTypeDef;
 
-// --- PUBLIC FONKSİYON PROTOTİPLERİ ---
+
 
 // Başlatma Fonksiyonları
 uint8_t LoRa_Init(LoRa_HandleTypeDef* lora);
@@ -54,7 +54,7 @@ void LoRa_SendMessage(LoRa_HandleTypeDef* lora, uint8_t* data, uint8_t length);
 void LoRa_ReceiveMode(LoRa_HandleTypeDef* lora);
 uint8_t LoRa_ReadPacket(LoRa_HandleTypeDef* lora, uint8_t* buffer, uint8_t maxLength);
 
-// Interrupt Yönetimi (Olay Yöneticisi)
+// Interrupt fon ksiyonu
 void LoRa_Handle_DIO0(LoRa_HandleTypeDef* lora);
 
 #endif /* INC_LORA_H_ */

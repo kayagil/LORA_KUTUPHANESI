@@ -77,9 +77,9 @@ void Error_Handler(void);
 #define LORA_DIO0_Pin GPIO_PIN_1
 #define LORA_DIO0_GPIO_Port GPIOC
 
-// Not: SPI pinleri (SCK, MISO, MOSI) genellikle doğrudan bu şekilde tanımlanmaz,
-//      çünkü HAL kütüphanesi bu pinleri SPI yapılandırması üzerinden yönetir.
+// Not: SPI pinleri (SCK, MISO, MOSI) genellikle doğrudan bu şekilde tanımlanmaz,  çünkü HAL kütüphanesi bu pinleri SPI yapılandırması üzerinden yönetir.
 
+    
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

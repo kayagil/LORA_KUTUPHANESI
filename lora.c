@@ -37,7 +37,7 @@ static LoRa_HandleTypeDef* _lora_handle;
 static volatile uint8_t _tx_done_flag = 0;
 volatile uint8_t rx_done_flag = 0; // Alıcıda main.c'den erişim için public (volatile)
 
-// --- Kütüphane İçi (Private) Fonksiyonlar ---
+// Kütüphane İçi (Private) Fonksiyonlar 
 static void RFM98_Write(uint8_t address, uint8_t value) {
     uint8_t write_address = address | 0x80;
     HAL_GPIO_WritePin(_lora_handle->NSS_Port, _lora_handle->NSS_Pin, GPIO_PIN_RESET);
@@ -125,7 +125,7 @@ uint8_t LoRa_ReadPacket(LoRa_HandleTypeDef* lora, uint8_t* buffer, uint8_t maxLe
 
 void LoRa_Handle_DIO0(LoRa_HandleTypeDef* lora) {
     uint8_t flags = RFM98_Read(REG_IRQ_FLAGS);
-    RFM98_Write(REG_IRQ_FLAGS, 0xFF); // Tüm bayrakları temizle
+    RFM98_Write(REG_IRQ_FLAGS, 0xFF); // Tüm falgları temizle
     if (flags & IRQ_TX_DONE_MASK) _tx_done_flag = 1;
     if (flags & IRQ_RX_DONE_MASK) rx_done_flag = 1;
 }
