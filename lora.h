@@ -54,7 +54,7 @@ void LoRa_SendMessage(LoRa_HandleTypeDef* lora, uint8_t* data, uint8_t length);
 void LoRa_ReceiveMode(LoRa_HandleTypeDef* lora);
 uint8_t LoRa_ReadPacket(LoRa_HandleTypeDef* lora, uint8_t* buffer, uint8_t maxLength);
 
-// Interrupt fon ksiyonu
+// Interrupt fonksiyonu
 void LoRa_Handle_DIO0(LoRa_HandleTypeDef* lora);
 
 #endif /* INC_LORA_H_ */
